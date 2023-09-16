@@ -27,7 +27,7 @@ function App() {
         <h1 className="mb-20">Todo list</h1>
         {/* le composant AddTodo met à jour le contenu grâce à la fonction, le props addTodo.  */}
           <AddTodo addTodo={ addTodo }/>
-          <TodoList />
+          <TodoList todoList={ todoList }/>
       </div>
     </div>
   );
