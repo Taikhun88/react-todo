@@ -21,13 +21,19 @@ function App() {
     setTodoList([...todoList, todo])
   }
 
+  // Cette fonction va remonter jusqu'à l'élement parent pour effacer l'item concerné
+  function deleteTodo(id) {
+    // filter retourne un nouveau tableau sans toucher celui qui est stocké dans la variable d'état 
+    setTodoList(todoList.filter( (todo) => todo.id !== id))
+  }
+
   return (
     <div className="d-flex flex-row justify-content-center align-items-center p-20">
       <div className="card container p-20">
         <h1 className="mb-20">Todo list</h1>
         {/* le composant AddTodo met à jour le contenu grâce à la fonction, le props addTodo.  */}
           <AddTodo addTodo={ addTodo }/>
-          <TodoList todoList={ todoList }/>
+          <TodoList todoList={ todoList } deleteTodo={ deleteTodo }/>
       </div>
     </div>
   );
