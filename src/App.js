@@ -23,9 +23,11 @@ function App() {
   // Cette fonction va remonter jusqu'à l'élement parent pour effacer l'item concerné
   function deleteTodo(id) {
     // filter retourne un nouveau tableau sans toucher celui qui est stocké dans la variable d'état
+    // Permet de dégager les todo dont l'id ne match pas
     setTodoList(todoList.filter((todo) => todo.id !== id));
   }
 
+  // Permet de déclencher la ternaire qui affiche le checkmark sur la todo en span de todoItem
   function toggleTodo(id) {
     // dans map, on fait une fonction call back avec argument todo qui retourne l'objet todo, la const et vérifie avec une ternaire si c'est le bon todo puis on met à jour la propriété done de l'objet todo avec un toggle !todo.done
     setTodoList(

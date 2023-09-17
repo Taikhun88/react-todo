@@ -4,10 +4,13 @@ function TodoItem({ todo, deleteTodo, toggleTodo, editTodo }) {
     <li className="mb-10 d-flex flex-row justify-content-center align-items-center p-10">
       {/* On intègre une ternaire qui affiche le checkmark si la propriété est true ou false d'après l'objet Todo dans App.js */}
       <span className="flex-fill mr-15">
-        {" "}
+        {/* Dans le cas ou toggle todo.done:false alors affiche rien */}{" "}
+        {/* todo.done && est une syntaxe abrégée pour une ternaire si todo.done:true Alors affiche icone checkmark */}
         {todo.content} {todo.done && "( ✓ )"}
       </span>
-      <button onClick={toggleTodo} className="btn btn-primary mr-15">Valider</button>
+      <button onClick={toggleTodo} className="btn btn-primary mr-15">
+        Valider
+      </button>
       <button onClick={editTodo} className="btn btn-primary mr-15">
         Modifier
       </button>
