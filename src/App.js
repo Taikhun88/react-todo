@@ -55,6 +55,19 @@ function App() {
     );
   }
 
+  function editTodo(id, content) {
+    setTodoList(
+      todoList.map((todo) =>
+        todo.id === id
+          ? {
+              ...todo,
+              edit: false,
+              content,
+            }
+          : todo
+      )
+    );
+  }
   return (
     <div className="d-flex flex-row justify-content-center align-items-center p-20">
       <div className="card container p-20">
@@ -66,6 +79,7 @@ function App() {
           deleteTodo={deleteTodo}
           toggleTodo={toggleTodo}
           toggleTodoEdit={toggleTodoEdit}
+          editTodo={editTodo}
         />
       </div>
     </div>
